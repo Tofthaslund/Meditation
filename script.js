@@ -13,6 +13,15 @@ const app = () => {
     const outlineLength = outline.getTotalLength();
     //Duration
     let fakeDuration = 600;
+
+    outline.style.strokeDasharray = outlineLength;
+    outline.style.strokeDashoffset = outlineLength;
+
+
+    //Play sound
+    play.addEventListener('click', () => {
+       song.play(); 
+    });
 };
 
 app();
