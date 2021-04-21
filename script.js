@@ -34,7 +34,23 @@ const app = () => {
             video.pause();
             play.src = 'svg/play.svg';
         }
-    }
+    };
+
+    //animae the circle 
+    song.ontimeupdate = function(){
+        let currentTime = song.currentTime;
+        let elapsed = fakeDuration - currentTime;
+        let seconds = Math.floor(elapsed % 60);
+        let minutes = Math.florr(elapsed / 60);
+
+
+    //Animate the circle
+        let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
+        outline.style.strokeDashoffset = progress;
+
+    //animate the text
+    timeDisplay.textContent = `${minutes}:${seconds}`
+    };
 };
 
 app();
