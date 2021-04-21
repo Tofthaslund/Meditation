@@ -13,7 +13,7 @@ const app = () => {
     //Get the lenght of the outline
     const outlineLength = outline.getTotalLength();
     //Duration
-    let fakeDuration = 6000;
+    let fakeDuration = 600;
 
     outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
@@ -61,7 +61,7 @@ const app = () => {
         let currentTime = song.currentTime;
         let elapsed = fakeDuration - currentTime;
         let seconds = Math.floor(elapsed % 60);
-        let minutes = Math.florr(elapsed / 60);
+        let minutes = Math.floor(elapsed / 60);
 
 
     //Animate the circle
